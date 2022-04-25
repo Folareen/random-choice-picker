@@ -15,13 +15,20 @@ p{
     color: whitesmoke;
     font-size: 1.2rem;
     line-height: 1.5;
+    background-color: rgba(0, 0, 0, 0.1);
+    max-width: max-content;
+    margin: 10px auto;
+    padding: 5px;
 }
 strong{
     text-transform: capitalize;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2px;
 }
 
 textarea{
     outline: 2px solid white;
+    border: 2px solid purple;
     padding: 5px;
     height: 150px;
     width: 80%;
@@ -48,7 +55,9 @@ button:hover{
     background-color: rgba(146, 15, 172, .8);
     transform: scale(1.01);
 }
-
+button:active{
+    transform: scale(.9);
+}
 .choices{
     display: flex;
     justify-content: center;
@@ -62,4 +71,9 @@ button:hover{
     background-color: white;
     padding: 10px 20px;
     border-radius: 20px;
+    /* transition: 2s all ease-in-out; */
+}
+.highlight{
+    background-color: rgb(146, 15, 172);
+    color: white;
 }
