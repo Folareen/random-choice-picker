@@ -55,7 +55,7 @@ function pick(){
             
         }, 100
     );
-    
+
     setTimeout(
         () =>{
             clearInterval(randomPick);
