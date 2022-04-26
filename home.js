@@ -30,43 +30,52 @@ function pick(){
     TEXTBOX.value = "";
     let listOfChoices = document.querySelectorAll(".choice");
 
-    let counter = 0;
-    let randomDuration = listOfChoices.length * 5;
-    if ( counter == randomDuration){
-        clearInterval(randomPick)
-    }
+    listOfChoices.forEach((choice) => {
+        unhighlight(choice)
+    })
 
     let randomPick = setInterval(
         () => {
-            counter += 1;
             let random = Math.floor(Math.random() * listOfChoices.length);
             let choosen = listOfChoices[random];
+
             setTimeout (
                 () =>{
                     highlight(choosen);
 
                     setTimeout(
                         () => {
-                            unhighlight(choosen)
+                            unhighlight(choosen);
                         }, 100
                         
                     )
-                    if (counter < randomDuration){
-                        
-                    }
-
 
                 }, 0000
-            )
+            );
+            
         }, 100
+    );
+    
+    setTimeout(
+        () =>{
+            clearInterval(randomPick);
+            
+            setTimeout(
+                () => {
+                    let random = Math.floor(Math.random() * listOfChoices.length);
+                    let choosen = listOfChoices[random];
+                    highlight(choosen);
+                }, 100
+            )
+        }, 500 * listOfChoices.length
     )
 
 }
 
-function highlight(curr){
-    curr.classList.add("highlight");
+function highlight(item){
+    item.classList.add("highlight");
 }
 
-function unhighlight(curr){
-    curr.classList.remove("highlight");
+function unhighlight(item){
+    item.classList.remove("highlight");
 }
