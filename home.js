@@ -65,7 +65,7 @@ function pick(){
                     let random = Math.floor(Math.random() * listOfChoices.length);
                     let choosen = listOfChoices[random];
                     highlight(choosen);
-                }, 100
+                }, 0
             )
         }, 500 * listOfChoices.length
     )
